@@ -47,6 +47,8 @@ from function_game import imgs_set, imgs_set_, click_pos_2, random_int, text_che
 from massenger import line_monitor, line_to_me
 from schedule import myQuest_play_check, myQuest_play_add
 
+from tuto import tuto_start
+
 
 from stop_event18 import _stop_please
 
@@ -140,7 +142,7 @@ class MyApp(QDialog):
 
         # 풀버젼
         #  git config --global --add safe.directory C:/my_games/mbng
-        # pyinstaller --hidden-import PyQt5 --hidden-import pyserial --hidden-import requests --hidden-import chardet --add-data="C:\\my_games\\game_folder\\data_game;./data_game" --add-data="C:\\my_games\\game_folder\\mysettings;./mysettings" --name game_folder -i="game_folder_macro.ico" --add-data="game_folder_macro.ico;./" --icon="game_folder_macro.ico" --paths "C:\Users\1_S_3\AppData\Local\Programs\Python\Python311\Lib\site-packages\cv2" main.py
+        # pyinstaller --hidden-import PyQt5 --hidden-import pyserial --hidden-import requests --hidden-import chardet --add-data="C:\\my_games\\dkmr\\data_dkmr;./data_dkmr" --add-data="C:\\my_games\\dkmr\\mysettings;./mysettings" --name dkmr -i="dkmr.ico" --add-data="dkmr.ico;./" --icon="dkmr.ico" --paths "C:\Users\1_S_3\AppData\Local\Programs\Python\Python311\Lib\site-packages\cv2" main.py
         # 업데이트버젼
         # pyinstaller --hidden-import PyQt5 --hidden-import pyserial --hidden-import requests --hidden-import chardet --add-data="C:\\my_games\\game_folder\\data_game;./data_game" --name game_folder -i="game_folder_macro.ico" --add-data="game_folder_macro.ico;./" --icon="game_folder_macro.ico" --paths "C:\Users\1_S_3\AppData\Local\Programs\Python\Python311\Lib\site-packages\cv2" main.py
 
@@ -163,22 +165,25 @@ class MyApp(QDialog):
                 with open(file_path, "w", encoding='utf-8-sig') as file:
                     file.write("ccocco:메롱")
 
-        if line_[0] == "coob":
-            x_reg = 0
+
 
         monitors = get_monitors()
         last_monitor_number = 0
         for idx, monitor in enumerate(monitors, start=1):
             last_monitor_number = idx
 
-        if last_monitor_number == 1:
-            x_reg = 0
-        elif last_monitor_number == 2:
-            x_reg = 0
-        elif last_monitor_number == 3:
-            x_reg = 0
 
-        self.setGeometry(20 + x_reg, 200, 900, 700)
+        if line_[1] == "super_coob":
+            x_reg = 960 * 3
+
+        elif last_monitor_number == 1:
+            x_reg = 960
+        elif last_monitor_number == 2:
+            x_reg = 960
+        elif last_monitor_number == 3:
+            x_reg = 960
+
+        self.setGeometry(20 + x_reg, 100, 900, 900)
         self.show()
     def my_title(self):
         self.setWindowTitle(v_.this_game + "(ver " + version + ")")
@@ -3900,7 +3905,7 @@ class game_Playing(QThread):
                                 # 오토 시작
 
                                 if result_schedule_ == "튜토육성":
-                                    # tuto_start(v_.now_cla)
+                                    tuto_start(v_.now_cla)
                                     print("start")
 
 

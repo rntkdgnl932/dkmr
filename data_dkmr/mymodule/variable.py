@@ -8,9 +8,9 @@ now_arduino = "none"
 
 
 # 게임 및 폴더 관련
-this_game = "game_name"
-game_folder = "basic_setting"
-data_folder = "data_basic"
+this_game = "dkmr"
+game_folder = "dkmr"
+data_folder = "data_dkmr"
 notification_count = 0
 # 버젼
 

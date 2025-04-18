@@ -16,7 +16,7 @@ def go_test():
     import random
 
 
-    print("test")
+    print("test...")
     cla = "one"
 
     plus = 0
@@ -35,3 +35,14 @@ def go_test():
     elif cla == "six":
         plus = 960 * 5
 
+
+    from clean_screen import clean_screen_go
+
+
+    try:
+
+        clean_screen_go(cla)
+
+
+    except Exception as e:
+        print(e)
